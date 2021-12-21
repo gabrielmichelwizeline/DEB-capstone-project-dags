@@ -33,6 +33,7 @@ class S3ToPostgresTransferFromXcom(BaseOperator):
         parameters=None,
         move_file=True,
         dest_prefix=None,
+        track_status=False,
         *args,
         **kwargs
     ):
@@ -52,7 +53,7 @@ class S3ToPostgresTransferFromXcom(BaseOperator):
         if not dest_prefix:
             self.dest_prefix = None
             self.move_file = False
-        self.track_status = kwargs.get("track_status") or False
+        self.track_status = track_status
 
     @track_operator_status
     def execute(self, context):

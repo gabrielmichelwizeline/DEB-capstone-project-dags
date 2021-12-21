@@ -22,6 +22,7 @@ class S3ListKeys(BaseOperator):
         verify=None,
         max_items=None,
         page_size=None,
+        track_status=False,
         *args,
         **kwargs
     ):
@@ -32,7 +33,7 @@ class S3ListKeys(BaseOperator):
         self.verify = verify
         self.max_items = max_items
         self.page_size = page_size
-        self.track_status = kwargs.get("track_status") or False
+        self.track_status = track_status
 
     @track_operator_status
     def execute(self, context):
