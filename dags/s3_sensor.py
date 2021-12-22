@@ -10,7 +10,7 @@ from plugins.operators.slack_notifications import NotifySlackDagResult
 
 NEW_FILES_PREFIX = os.environ.get("NEW_FILES_PREFIX")
 PROCESSED_FILES_PREFIX = os.environ.get("PROCESSED_FILES_PREFIX")
-BUCKET_NAME = os.environ.get("BUCKET_NAME")
+BUCKET_NAME = os.environ.get("raw_bucket_name")
 POSTGRES_TABLE = os.environ.get("POSTGRES_TABLE")
 POSTGRES_SCHEMA = os.environ.get("POSTGRES_SCHEMA")
 SLACK_HTTP_CONNECTION_ID = os.environ.get("SLACK_HTTP_CONNECTION_ID")
